@@ -1,0 +1,17 @@
+package SiteValidation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import utilities.SeleniumUtility;
+
+public class PrintPriceAndNames {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+  WebElement CityFrom = SeleniumUtility.driver.findElement(By.xpath("//div[@class='clearfix search-wrap']/div/div/input[@id='src']"));
+	CityFrom.sendKeys("Pune");
+	WebElement AllSuggestions =SeleniumUtility.driver.findElement(By.xpath("//input[@id='src']"));
+	}
+
+}

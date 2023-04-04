@@ -1,0 +1,33 @@
+package MouseOps;
+
+
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import utilities.SeleniumUtility;
+
+public class Cricinfohover {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+WebDriver driver = SeleniumUtility.setUp("chrome","https://www.espncricinfo.com");
+List<WebElement> listofmainmenu =SeleniumUtility.driver.findElements(By.xpath("//div[@class='ds-flex ds-flex-row']/div/a"));
+	System.out.println("the list of main menu:"+listofmainmenu.size());
+	Actions act = new Actions(driver);
+	for(int i=0; i<listofmainmenu.size();i++) {
+		act.moveToElement(listofmainmenu.get(i)).perform();
+		
+	}
+	List<WebElement> nameofList = SeleniumUtility.driver.findElements(By.xpath(""));
+	for(int i=0; i<nameofmainmenu.size();i++) {
+		WebElement names= nameofmainmenu.get(i);
+		System.out.println("the List of the main menu is:");
+	}
+	}
+
+}

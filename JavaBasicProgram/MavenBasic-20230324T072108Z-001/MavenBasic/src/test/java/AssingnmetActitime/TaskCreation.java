@@ -1,0 +1,22 @@
+package AssingnmetActitime;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import utilities.SeleniumUtility;
+
+public class TaskCreation {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = SeleniumUtility.setUp("chrome", "https://demo.actitime.com/login.do");
+		WebElement Username = SeleniumUtility.driver.findElement(By.xpath("//input[@id='username']"));
+		Username.sendKeys("admin");
+		WebElement Password = SeleniumUtility.driver.findElement(By.xpath("//input[@name='pwd']"));
+		Password.sendKeys("manager");
+		SeleniumUtility.driver.findElement(By.xpath("//a[@id='loginButton']/div")).click();
+		//SeleniumUtility.driver.findElement(By.xpath("")).click();
+	}
+
+}

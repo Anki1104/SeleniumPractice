@@ -1,0 +1,29 @@
+package UsingXpath;
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import utilities.SeleniumUtility;
+
+public class RedBussPricevalidation {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = SeleniumUtility.setUp("chrome", "https://www.redbus.in");
+		WebElement element = SeleniumUtility.driver.findElement(By.xpath("//input[@id='src']"));
+		SeleniumUtility.typeInput(SeleniumUtility.driver.findElement(By.xpath("//input[@id='src']")),"pune");
+		WebElement Element = SeleniumUtility.driver.findElement(By.xpath("//input[@id='dest']"));
+		SeleniumUtility.typeInput(SeleniumUtility.driver.findElement(By.xpath("//input[@id='dest']")),"Panjim Gao");
+		
+
+		//SeleniumUtility.driver.findElement(By.xpath("//input[@id='onward_cal']")).click();
+
+		SeleniumUtility.waitUntilElementIsVisible(driver.findElement(By.xpath("//div[@class='clearfix search-wrap']/div[3]/span")));
+		SeleniumUtility.clickOnElement(driver.findElement(By.xpath("//table/tbody/tr/td[@class='next']")));
+		SeleniumUtility.waitUntilElementIsVisible(driver.findElement(By.xpath("//tr[5]/td[2]")));
+		SeleniumUtility.clickOnElement(driver.findElement(By.xpath("//button[@id='search_btn']")));
+	}
+
+}

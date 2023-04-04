@@ -1,0 +1,10 @@
+package switchstatement;
+
+public class SortableElement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

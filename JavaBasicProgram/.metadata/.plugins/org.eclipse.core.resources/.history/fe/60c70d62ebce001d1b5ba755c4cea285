@@ -1,0 +1,23 @@
+package KeyboardOps;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import utilities.SeleniumUtility;
+
+public class KeyboardUsingusingkeyFunction {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = SeleniumUtility.setUp("chrome", "https://demo.actitime.com/login.do");
+		WebElement Username = driver.findElement(By.id("username"));
+		SeleniumUtility.typeInput(Username, "admin");
+		WebElement Password = driver.findElement(By.id("pwd"));
+		SeleniumUtility.typeInput(Password, "manager");
+		Password.sendKeys(Keys.ENTER);
+
+	}
+
+}

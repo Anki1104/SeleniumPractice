@@ -1,0 +1,21 @@
+package MouseOps;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import utilities.SeleniumUtility;
+
+public class MouseActions {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+WebDriver driver = SeleniumUtility.setUp("chrome","https://www.flipkart.com");
+List<WebElement> mainmenu =SeleniumUtility.driver.findElements(By.xpath("//div[@class='_37M3Pb']/div/a"));
+
+System.out.println("The List of the main menu is :"+mainmenu.size());
+	}
+
+}

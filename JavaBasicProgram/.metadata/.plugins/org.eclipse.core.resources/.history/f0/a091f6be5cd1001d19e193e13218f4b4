@@ -1,0 +1,27 @@
+package switchstatement;
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import utilities.SeleniumUtility;
+
+public class SortableElement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+WebDriver driver = SeleniumUtility.setUp("chrome","https://jqueryui.com");
+driver.findElement(By.xpath("//a[text()='Sortable']")).click();
+WebElement frame = driver.findElement(By.xpath("//iframe[@class='demo-frame']"));
+driver.switchTo().frame(frame);
+WebElement sortable = driver.findElement(By.xpath("//ul[@id='sortable']"));
+
+WebElement sort = driver.findElement(By.xpath("//li[@class='ui-state-default ui-sortable-handle']"));
+Actions act = new Actions(driver);
+act.moveToElement(sort, 0, 7).perform();
+driver.switchTo().defaultContent();
+
+	}
+}

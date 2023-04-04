@@ -1,0 +1,15 @@
+package MouseOps;
+
+import org.openqa.selenium.WebDriver;
+
+import utilities.SeleniumUtility;
+
+public class MouseActions {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+WebDriver driver = SeleniumUtility.setUp("chrome","https://www.flipkart.com");
+
+	}
+
+}

@@ -1,0 +1,34 @@
+package switchstatement;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import utilities.SeleniumUtility;
+
+public class SortableElement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = SeleniumUtility.setUp("chrome", "https://jqueryui.com");
+		driver.findElement(By.xpath("//a[text()='Sortable']")).click();
+		WebElement frame = driver.findElement(By.xpath("//iframe[@class='demo-frame']"));
+		driver.switchTo().frame(frame);
+		Actions act = new Actions(driver);
+		List<WebElement> list = driver.findElements(By.xpath("//ul/li[@class='ui-state-default ui-sortable-handle']"));
+		for (WebElement we : list) {
+			if (we.getText().contains("list")) {
+				act.dragAndDrop(we,
+						driver.findElement(By.xpath("//ul/li[@class='ui-state-default ui-sortable-handle']")))
+						.perform();
+				break;
+			}
+
+			driver.switchTo().defaultContent();
+		}
+	}
+}

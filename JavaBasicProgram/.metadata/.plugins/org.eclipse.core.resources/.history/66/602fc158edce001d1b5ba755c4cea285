@@ -1,0 +1,15 @@
+package KeyboardOps;
+
+import org.openqa.selenium.WebDriver;
+
+import utilities.SeleniumUtility;
+
+public class KeyyBoardOps3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+WebDriver driver = SeleniumUtility.setUp("chrome","http://demo.automationtesting.in/Register.html");
+    
+	}
+
+}

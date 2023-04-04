@@ -1,0 +1,16 @@
+package switchstatement;
+
+import org.openqa.selenium.WebDriver;
+
+import utilities.SeleniumUtility;
+
+public class Handlingframe {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+WebDriver driver = SeleniumUtility.setUp("chrome","https://jqueryui.com");
+
+
+	}
+
+}

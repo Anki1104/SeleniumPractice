@@ -1,0 +1,30 @@
+package OrangeHrmTestCase;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import utilities.SeleniumUtility;
+
+public class OrangeHrmCreate {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = SeleniumUtility.setUp("chrome", "https://opensource-demo.orangehrmlive.com");
+		WebElement Username = SeleniumUtility.driver.findElement(By.xpath("//input[@name='username']"));
+		Username.sendKeys("Admin");
+		WebElement Password = SeleniumUtility.driver.findElement(By.xpath("//input[@name='password']"));
+		Password.sendKeys("admin123");
+		SeleniumUtility.driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+		SeleniumUtility.driver.findElement(By.xpath("//aside[@class='oxd-sidepanel']//ul/li[2]")).click();
+		SeleniumUtility.driver
+				.findElement(By.xpath("//div/button[@class='oxd-button oxd-button--medium oxd-button--secondary']"))
+				.click();
+		WebElement firstname = SeleniumUtility.driver.findElement(By.xpath("//div[@class='orangehrm-background-container']//form[@class='oxd-form']//div/input[@placeholder='First Name']"));
+	    SeleniumUtility.typeInput(firstname, "Ankita");
+	
+	
+	}
+
+}

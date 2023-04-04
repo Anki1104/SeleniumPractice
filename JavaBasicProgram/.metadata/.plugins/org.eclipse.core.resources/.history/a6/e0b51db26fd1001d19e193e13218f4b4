@@ -1,0 +1,31 @@
+package switchstatement;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import utilities.SeleniumUtility;
+
+public class SortableElement {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver driver = SeleniumUtility.setUp("chrome", "https://jqueryui.com");
+		driver.findElement(By.xpath("//a[text()='Sortable']")).click();
+		Actions act = new Actions(driver);
+		WebElement iframeElement = driver.findElement(By.cssSelector("iframe.demo-frame"));
+		driver.switchTo().frame(iframeElement);
+		List<WebElement> list1 = driver.findElements(By.cssSelector("ul > li.ui-state-default"));
+		WebElement list2 = driver.findElement(By.xpath("//ul[@id='sortable']"));
+		for (WebElement item : list1) {
+			if (item.getText().equals("Item 7")) {
+				act.dragAndDrop(item, list2).perform();
+				break;
+			}
+		}
+	}
+}

@@ -1,0 +1,10 @@
+package SiteValidation;
+
+public class PrintPriceAndNames {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
